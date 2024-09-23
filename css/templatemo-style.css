@@ -506,6 +506,8 @@ https://templatemo.com/tm-516-known
   -----------------------------------------*/
 
   .faq-question {
+    border-radius: 12px; /* Soft rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     background-color: #F7CAC9;
     border: none;
     width: 100%;
@@ -530,7 +532,6 @@ https://templatemo.com/tm-516-known
 
   .faq-item {
     margin-bottom: 10px;
-    border: 1px solid #e0e0e0;
   }
 
   .faq-item.active .faq-answer {
@@ -909,7 +910,29 @@ https://templatemo.com/tm-516-known
     color: #ffffff;
   }
 
+  /*---------------------------------------
+     CUSTOM IMAGES              
+  -----------------------------------------*/
 
+.modern-image {
+    max-width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 12px; /* Soft rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    object-fit: cover; /* Ensures the image fills its container nicely */
+}
+
+/* Hover effect */
+.modern-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.custom-entry {
+  border-radius: 12px; /* Soft rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
 
   /*---------------------------------------
      RESPONSIVE STYLES              
