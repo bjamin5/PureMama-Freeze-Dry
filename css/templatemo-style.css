@@ -959,6 +959,8 @@ https://templatemo.com/tm-516-known
     .team-thumb,
     .footer-info {
       margin-bottom: 50px;
+      border-radius: 12px; /* Soft rounded corners */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     }
 
     .contact-image {
