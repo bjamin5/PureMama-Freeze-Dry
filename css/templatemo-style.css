@@ -992,8 +992,9 @@ https://templatemo.com/tm-516-known
       -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
       -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
       box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-      padding: 10px 0;
+      padding: 10px 0 20px 0;
       text-align: center;
+      
     }
 
     .custom-navbar .navbar-brand,
