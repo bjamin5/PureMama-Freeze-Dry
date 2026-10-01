@@ -1069,3 +1069,84 @@ https://templatemo.com/tm-516-known
     }
   }
   
+/*---------------------------------------
+    INTRO & PRICING
+-----------------------------------------*/
+
+#intro {
+  text-align: center;
+  padding: 50px 0 20px 0;
+}
+
+#intro h1 {
+  font-size: 2.4em;
+  margin: 0 0 15px 0;
+}
+
+#intro p {
+  max-width: 720px;
+  margin: 0 auto 25px auto;
+  font-size: 1.15em;
+}
+
+#intro .section-btn {
+  margin: 5px;
+  background: #F7CAC9;
+  border-color: #F7CAC9;
+  color: #333333;
+  font-weight: bold;
+}
+
+#intro .section-btn:hover {
+  background: #ffffff;
+  border-color: #F7CAC9;
+  color: #333333;
+}
+
+#pricing {
+  padding: 60px 0;
+}
+
+.pricing-table {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-table th {
+  background-color: #F7CAC9;
+  padding: 14px 20px;
+  font-size: 1.1em;
+}
+
+.pricing-table td {
+  padding: 12px 20px;
+  border-top: 1px solid #f0e0df;
+  background-color: #ffffff;
+}
+
+.pricing-table tr:nth-child(even) td {
+  background-color: #fef6f4;
+}
+
+.pricing-table td:last-child,
+.pricing-table th:last-child {
+  text-align: right;
+  font-weight: bold;
+}
+
+.pricing-note {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  #intro h1 {
+    font-size: 1.8em;
+  }
+}
