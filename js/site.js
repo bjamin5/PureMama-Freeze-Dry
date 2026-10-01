@@ -36,6 +36,50 @@
     update();
   });
 
+  // Reels drift slowly on their own in an endless loop. Pauses while being
+  // hovered, touched or focused; still swipeable; off for reduced-motion users.
+  var reels = document.querySelector('.reels-track');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reels && !reduceMotion) {
+    var originals = Array.prototype.slice.call(reels.children);
+    originals.forEach(function (card) {
+      var clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.setAttribute('tabindex', '-1');
+      reels.appendChild(clone);
+    });
+    var firstClone = reels.children[originals.length];
+    function loopWidth() { return firstClone.offsetLeft - originals[0].offsetLeft; }
+    var speed = 30; // px per second
+    var pos = 0, last = null, paused = false, resumeTimer = null;
+    function pause() { paused = true; clearTimeout(resumeTimer); }
+    function resumeSoon() {
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function () { pos = reels.scrollLeft; paused = false; }, 2500);
+    }
+    reels.addEventListener('mouseenter', pause);
+    reels.addEventListener('mouseleave', resumeSoon);
+    reels.addEventListener('touchstart', pause, { passive: true });
+    reels.addEventListener('touchend', resumeSoon, { passive: true });
+    reels.addEventListener('focusin', pause);
+    reels.addEventListener('focusout', resumeSoon);
+    reels.parentElement.querySelectorAll('.carousel-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () { pause(); resumeSoon(); });
+    });
+    (function tick(now) {
+      if (last !== null && !paused) {
+        pos += speed * (now - last) / 1000;
+        if (pos >= loopWidth()) pos -= loopWidth();
+        reels.scrollLeft = pos;
+      } else if (paused && reels.scrollLeft >= loopWidth()) {
+        // swiped into the cloned half: jump back to the matching original
+        reels.scrollLeft -= loopWidth();
+      }
+      last = now;
+      requestAnimationFrame(tick);
+    })(performance.now());
+  }
+
   // Sticky "Message Sophia" button appears after scrolling past the hero,
   // hidden again once the contact section is on screen
   var sticky = document.querySelector('.sticky-cta');
