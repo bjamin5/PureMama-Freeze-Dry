@@ -228,7 +228,7 @@ a { color: var(--rose); }
   width: min(340px, 85vw); margin: 0;
   display: flex; flex-direction: column;
   padding: 26px; border-radius: var(--radius);
-  background: var(--cream); box-shadow: var(--shadow);
+  background: var(--white); box-shadow: var(--shadow);
 }
 .review blockquote { margin: 12px 0 20px; font-size: 16px; flex: 1; }
 .review figcaption { display: flex; align-items: center; gap: 12px; font-weight: 700; }
@@ -260,6 +260,17 @@ a { color: var(--rose); }
   .step-body p { font-size: 16px; }
 }
 
+/* ---------- Reconstitute guide ---------- */
+
+.guide-card {
+  display: block; max-width: 460px; margin: 0 auto 16px;
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+  transition: transform .2s ease;
+}
+.guide-card:hover { transform: translateY(-3px); }
+.guide-card img { width: 100%; height: auto; }
+.guide .center a { font-weight: 700; text-decoration: none; }
+
 /* ---------- Pricing ---------- */
 
 .price-card {
@@ -280,7 +291,7 @@ a { color: var(--rose); }
 /* ---------- FAQ ---------- */
 
 .faq details {
-  background: var(--white); border-radius: 12px; margin-bottom: 10px;
+  background: var(--cream); border-radius: 12px; margin-bottom: 10px;
   box-shadow: 0 4px 14px rgba(90, 50, 45, .06);
 }
 .faq summary {
